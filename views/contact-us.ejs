@@ -1,0 +1,62 @@
+<%-include('includes/head')%>
+    <link rel="stylesheet" href="/css/contact-us.css">
+    </head>
+
+    <body>
+        <div>
+            <div class="contact-form-wrapper d-flex justify-content-center">
+                <form name="submit-to-google-sheet" class="contact-form">
+                    <h5 class="title">We'd love to hear from you!</h5>
+                    <p class="description">Please give us your feedback about this portal or contact us with any questions below.
+                    </p>
+                    <div class="form-group name-group">
+                      <div class="palceholder">
+                        <label for="name">Name</label>
+                        <span class="star">*</span>
+                      </div>
+                      <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" name="Name" required>
+                    </div>
+                    <div class="form-group name-group">
+                      <div class="palceholder">
+                        <label for="email">Email</label>
+                        <span class="star">*</span>
+                      </div>
+                      <input type="email" class="form-control rounded border-white mb-3 form-input" id="email" name="Email" required>
+                    </div>
+                    <div>
+                        <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" placeholder="Message" name="Data" required></textarea>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control rounded border-white mb-3 form-input" placeholder="+919999999999" name="Number">
+                    </div>
+                    <div class="submit-button-wrapper">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzDC3D2G0NziM2I7edy1f6P6Hsp9VaeyCPbvlUi2vANCHf_iXhlMFGWxa6UbYi3Za6I/exec'
+            const form = document.forms['submit-to-google-sheet']
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                    .then(response => {
+                        var x = window.location.href
+
+                        var z = x.split(".com/")
+                        if (x.indexOf(".com") <= -1) {
+                            window.alert("Success!")
+                        } else {
+                            window.location.replace(z + ".com/success")
+                        }
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+        <script src="/js/contact-us.js"></script>
+        <%-include('includes/foot')%>

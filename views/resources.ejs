@@ -1,0 +1,246 @@
+<%-include('includes/head')%>
+<link rel="stylesheet"
+      href="/css/resources.css">
+</head>
+
+<body>
+    <div class="container-resources container">
+        <div class="resourceDescription">
+            <h2>
+                Research.
+            </h2>
+            <p class="heading-resources">
+                To help us better understand western Avadh's food and ecological history, we referred to a number of
+                historical documents, reports and research material. Some of the most useful ones are shared below:
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 col-md-8">
+                <ul class="nav nav-pills nav-pills-custom">
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           data-toggle="pill"
+                           href="#primary"
+                           role="tab"
+                           aria-controls="pills-primary"
+                           aria-selected="true">Primary Material</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           data-toggle="pill"
+                           href="#Reports"
+                           role="tab"
+                           aria-controls="pills-Reports"
+                           aria-selected="false">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           data-toggle="pill"
+                           href="#Research"
+                           role="tab"
+                           aria-controls="pills-Research"
+                           aria-selected="false">Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           data-toggle="pill"
+                           href="#Gazetteers"
+                           role="tab"
+                           aria-controls="pills-Gazetteers"
+                           aria-selected="false">Gazetteers</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-3">
+                    <div class="tab-pane fade show active"
+                         id="primary"
+                         role="tabpanel"
+                         aria-labelledby="primary-tab">
+                        <center>
+                            <div class="resourceDescription">
+                                <b>
+                                    <h3>
+                                        <%=pageTitlePrimary%>
+                                    </h3>
+                                </b>
+                                <p>
+                                    <%=pageDescriptionPrimary%>
+                                </p>
+                            </div>
+                        </center>
+                        <ul>
+                            <center>
+                                <%for(i=0;i < resourcePrimary.length; i++){%>
+                                <li>
+                                    <div class="resourceDownload">
+                                        <center>
+                                            <h5 class="titleSelector">
+                                                <%=resourcePrimary[i].Title%>
+                                            </h5>
+                                            <h6>
+                                                -
+                                                <%=resourcePrimary[i].Year%>
+                                            </h6>
+                                            <p>
+                                                <%=resourcePrimary[i].Description%>
+                                            </p>
+                                            <br>
+                                            <% if (resourcePrimary[i].Link && resourcePrimary[i].Link.includes('youtube.com')) { %>
+                                            <div
+                                                 style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
+                                                <iframe src="https://www.youtube.com/embed/<%= resourcePrimary[i].Link.split('v=')[1] ? resourcePrimary[i].Link.split('v=')[1].split('&')[0] : '' %>"
+                                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                            <% } else { %>
+                                            <a href="<%=resourcePrimary[i].Link%>"
+                                               target="_blank"></a>
+                                            <% } %>
+                                        </center>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </center>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade"
+                         id="Gazetteers"
+                         role="tabpanel"
+                         aria-labelledby="profile-tab">
+                        <center>
+                            <div class="resourceDescription">
+                                <b>
+                                    <h3>
+                                        <%=pageTitleGazetteers%>
+                                    </h3>
+                                </b>
+                                <p>
+                                    <%=pageDescriptionGazetteers%>
+                                </p>
+                            </div>
+                        </center>
+                        <ul>
+                            <center>
+                                <%for(i=0;i < resourceGazetteers.length; i++){%>
+                                <li>
+                                    <div class="resourceDownload">
+                                        <center>
+                                            <h5 class="titleSelector">
+                                                <%=resourceGazetteers[i].Title%>
+                                            </h5>
+                                            <h6>
+                                                -
+                                                <%=resourceGazetteers[i].Year%>
+                                            </h6>
+                                            <p>
+                                                <%=resourceGazetteers[i].Description%>
+                                            </p>
+                                            <br>
+                                            <a href="<%=resourceGazetteers[i].Link%>"
+                                               target="_blank"></a>
+                                        </center>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </center>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade"
+                         id="Research"
+                         role="tabpanel"
+                         aria-labelledby="Research-tab">
+                        <center>
+                            <div class="resourceDescription">
+                                <b>
+                                    <h3>
+                                        <%=pageTitleResearch%>
+                                    </h3>
+                                </b>
+                                <p>
+                                    <%=pageDescriptionResearch%>
+                                </p>
+                            </div>
+                        </center>
+                        <ul>
+                            <center>
+                                <%for(i=0;i < resourceResearch.length; i++){%>
+                                <li>
+                                    <div class="resourceDownload">
+                                        <center>
+                                            <h5 class="titleSelector">
+                                                <%=resourceResearch[i].Title%>
+                                            </h5>
+                                            <h6>
+                                                -
+                                                <%=resourceResearch[i].Year%>
+                                            </h6>
+                                            <p>
+                                                <%=resourceResearch[i].Description%>
+                                            </p>
+                                            <br>
+                                            <a href="<%=resourceResearch[i].Link%>"
+                                               target="_blank"></a>
+                                        </center>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </center>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade"
+                         id="Reports"
+                         role="tabpanel"
+                         aria-labelledby="Reports-tab">
+                        <center>
+                            <div class="resourceDescription">
+                                <b>
+                                    <h3>
+                                        <%=pageTitleReports%>
+                                    </h3>
+                                </b>
+                                <p>
+                                    <%=pageDescriptionReports%>
+                                </p>
+                            </div>
+                        </center>
+                        <ul>
+                            <center>
+                                <%for(i=0;i < resourceReports.length; i++){%>
+                                <li>
+                                    <div class="resourceDownload">
+                                        <center>
+                                            <h5 class="titleSelector">
+                                                <%=resourceReports[i].Title%>
+                                            </h5>
+                                            <h6>
+                                                -
+                                                <%=resourceReports[i].Year%>
+                                            </h6>
+                                            <p>
+                                                <%=resourceReports[i].Description%>
+                                            </p>
+                                            <br>
+                                            <a href="<%=resourceReports[i].Link%>"
+                                               target="_blank"></a>
+                                        </center>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </center>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+
+
+            </div>
+        </div>
+    </div>
+    <%-include('includes/foot')%>

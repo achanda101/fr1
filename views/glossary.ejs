@@ -1,0 +1,36 @@
+<%-include('includes/head')%>
+    <link rel="stylesheet" href="/css/glossary.css">
+    </head>
+
+    <body>
+        <div class="container-glossary container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="text-center center">
+                  <h3>GLOSSARY</h3>
+                </div>
+              </div>
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead class="thead-custom">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Word</th>
+                            <th scope="col">Definition</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <%for(i=0;i < glossaryEnglish.length; i++) {%>
+                          <tr>
+                            <th scope="row"><%=i+1%></th>
+                            <td><%=glossaryEnglish[i].term%></td>
+                            <td><%=glossaryEnglish[i].definition%></td>
+                          </tr>
+                        <% } %>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <%-include('includes/foot')%>

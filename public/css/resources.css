@@ -1,0 +1,116 @@
+.container-resources {
+    padding-top: 80px;
+}
+
+.resourceDescription h3 {
+    color: #9B613B;
+    font-weight: bold;
+}
+
+.resourceDescription h2 {
+    color: #9B613B;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #9B613B !important;
+}
+
+.nav-pills .nav-item a{
+    color: #9B613B;
+}
+.resourceDescription p.heading-resources {
+    font-size: 22px;
+}
+
+.container-resources li {
+    list-style-type: none;
+    margin-bottom: 70px;
+}
+
+.container-resources .menu a {
+    padding: 10px;
+}
+
+.contentHindiToggle {
+    padding: 10px;
+}
+
+#searched {
+    border: none;
+    border-bottom: 2px solid #9B613B;
+}
+
+#searched:focus {
+    outline-width: 0;
+}
+
+.searchBarResources {
+    padding-top: 19px;
+}
+
+#searchButton {
+    margin-left: 10px;
+}
+
+.resourceDownload h5 {
+    font-weight: bold;
+}
+
+.container-resources .resourceDownload a {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 35px 20px 13px 60px;
+    margin-right: 40px;
+    color: #444;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/download.png') 2px 0 no-repeat;
+}
+
+.container-resources .resourceDownload a:hover {
+    border-color: #444;
+    box-shadow: 0 0 10px #444;
+}
+
+.container-resources .resourceDownload a:active {
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.container-resources .resourceDownload a:before {
+    position: absolute;
+    width: 62px;
+    height: 72px;
+    top: 2px;
+    left: 2px;
+    transition: all .4s;
+}
+
+.container-resources .resourceDownload a:before {
+    content: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/pdf.png');
+}
+
+.container-resources .resourceDownload a:hover:before {
+    opacity: 0;
+}
+
+.container-resources .resourceDownload a:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    color: #aaa;
+}
+
+.container-resources .resourceDownload {
+    padding: 20px;
+    border: 2px solid #9B613B;
+    width: 100%;
+}
+
+.menu a:hover {
+    color: orange;
+}
+
+footer {
+    top: 100% important;
+}

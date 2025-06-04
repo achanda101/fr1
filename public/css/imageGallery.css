@@ -1,0 +1,108 @@
+.sliderc
+{
+    position: relative;
+    width: 100%;
+    height:100%;
+    margin: 0px auto;
+
+    
+}
+.sliderc img
+{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 1;
+
+}
+.sliderc img.active
+{
+    opacity: 1;
+  
+}
+
+.sliderconts
+{
+    width: 90%;
+    margin: auto;
+}
+.prev,
+.next
+{
+ background-color:transparent;
+    color:black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px;
+    margin-top:0px;
+    user-select: none;
+        font-weight:100;
+    text-transform:uppercase;
+    letter-spacing:3px;
+transition:0.5s ease;
+    
+}
+.prev:hover,
+.next:hover
+{
+
+text-decoration:underline;
+    
+}
+.prev
+{
+    float:left ;
+    margin-top:20px;
+}
+.next
+{
+    float: right;
+}
+.prev.dis,
+.next.dis
+{
+color: #f8f8f8;
+cursor: no-drop;
+
+    
+}
+.indect
+{
+    width: 60%;
+    float:center;
+}
+.indect ul
+{
+list-style: none;
+    margin-top: 30px;
+    text-align: center;
+
+    
+}
+.indect ul li
+{
+display: inline-block;
+
+    color:black;
+
+    height: 28px;
+    width: 28px;
+ 
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.indect ul li.active
+{
+display: inline-block;
+    background-color:black;
+    color: whitesmoke;
+    height: 28px;
+    width: 28px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+       border-radius: 50%;
+}
